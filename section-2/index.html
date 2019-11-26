@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hei</title>
+  <body>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <div id="app">
+        <button v-on:click="changeNumber('increase')">Increase</button>
+        <button v-on:click="changeNumber('decrease')">Decrease</button>
+        <p>{{ counter }}</p>
+    </div>
+    <script>
+      new Vue({
+      	el: '#app',
+        data: {
+        	counter: 0,
+        },
+        methods: {
+            changeNumber: function(direction){
+                if (direction=='increase'){
+                    this.counter++
+                } else if (direction=='decrease'){
+                    this.counter--
+                }
+                return this.counter
+            }
+        }
+      });
+    </script>
+  </body>
+</html>
